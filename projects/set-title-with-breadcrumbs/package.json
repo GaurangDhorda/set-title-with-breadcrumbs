@@ -1,11 +1,11 @@
 {
   "name": "set-title-with-breadcrumbs",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "peerDependencies": {
-    "@angular/common": "^10.2.4",
-    "@angular/core": "^10.2.4"
+    "@angular/common": "^14.3.0",
+    "@angular/core": "^14.3.0"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.5.3"
   }
 }

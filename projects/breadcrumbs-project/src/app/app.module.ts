@@ -4,13 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import {SetTitleWithBreadcrumbsModule} from 'set-title-with-breadcrumbs';
+import { HomeComponent } from './home/home.component'
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SetTitleWithBreadcrumbsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
