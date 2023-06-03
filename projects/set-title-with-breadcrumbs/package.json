@@ -1,6 +1,14 @@
 {
   "name": "set-title-with-breadcrumbs",
   "version": "0.0.9",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GaurangDhorda/set-title-with-breadcrumbs.git"
+  },
+  "description": "This library generates breadcrumbs based on angular router. When you have root-child route setup then it will show links of routed path inside breadcrumbs. This library is compatible with angular version 14 and above. If you have any doubts or issue then file and issue on github repository.",
+  "author": {
+    "name": "Gaurang Dhorda"
+  },
   "peerDependencies": {
     "@angular/common": "^14.3.0",
     "@angular/core": "^14.3.0"
