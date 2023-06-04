@@ -25,9 +25,11 @@ export class SetTitleWithBreadcrumbsService {
         filter((event: RouterEvent) => event instanceof NavigationEnd),
         map((routeUrl: RouterEvent) => {
           let childRouter = this.activatedRouter.firstChild;
+          console.log({childRouter})
           while (childRouter.firstChild) {
             childRouter = childRouter.firstChild;
           }
+          
           if (childRouter.snapshot.data["title"]) {
             let titleBreadCrums: IUrlTitle = {
               url: routeUrl.url,

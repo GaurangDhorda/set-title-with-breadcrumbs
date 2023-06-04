@@ -3,18 +3,21 @@ import { Observable } from 'rxjs';
 import { IUrlTitle } from './models/url-title';
 import { SetTitleWithBreadcrumbsService } from './set-title-with-breadcrumbs.service';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'lib-set-title-with-breadcrumbs',
   standalone:true,
-  imports:[AsyncPipe, NgIf,NgFor],
+  imports:[AsyncPipe, NgIf,NgFor, RouterLink],
   template: `
   <ng-container *ngIf="routerEventsTitle$ | async as breadcrumbs">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             Your are at :
+          
             <li *ngFor="let bc of breadcrumbs?.breadCrums; let last = last" class="breadcrumb-item" aria-current="page" [class.active]="last">
-                <a *ngIf="last !==true" [routerLink]="bc.url"> {{bc.label}} </a>
+              
+                <a *ngIf="last !==true" (click)="onRouteChange(bc.url)" [routerLink]="bc.url"> {{bc.label}} </a>
                 <span *ngIf="last" > {{bc.label}} </span>
             </li>
         </ol>
@@ -36,7 +39,10 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
     .breadcrumb-item {
       display: -ms-flexbox;
       display: flex;
+      color:#007bff;
+      cursor: pointer;
     }
+    
     .breadcrumb-item+.breadcrumb-item {
       padding-left: .5rem;
     }
@@ -54,10 +60,13 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 })
 export class SetTitleWithBreadcrumbsComponent implements OnInit {
   routerEventsTitle$: Observable<IUrlTitle>;
-  constructor(private breadService: SetTitleWithBreadcrumbsService) { }
+  constructor(private breadService: SetTitleWithBreadcrumbsService,private router:Router) { }
 
   ngOnInit(): void {
     this.routerEventsTitle$ = this.breadService.routerEventsTitle$;
   }
-
+  onRouteChange(url:string){
+    this.router.navigate([url])
+    console.log({url})
+  }
 }
