@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [SetTitleWithBreadcrumbsComponent],
+  declarations: [],
   imports: [
     RouterModule,
-    CommonModule 
+    CommonModule,
+    SetTitleWithBreadcrumbsComponent 
   ],
   exports: [SetTitleWithBreadcrumbsComponent, RouterModule]
 })

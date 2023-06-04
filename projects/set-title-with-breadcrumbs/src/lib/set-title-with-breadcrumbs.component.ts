@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUrlTitle } from './models/url-title';
 import { SetTitleWithBreadcrumbsService } from './set-title-with-breadcrumbs.service';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'lib-set-title-with-breadcrumbs',
+  standalone:true,
+  imports:[AsyncPipe, NgIf,NgFor],
   template: `
   <ng-container *ngIf="routerEventsTitle$ | async as breadcrumbs">
     <nav aria-label="breadcrumb">
