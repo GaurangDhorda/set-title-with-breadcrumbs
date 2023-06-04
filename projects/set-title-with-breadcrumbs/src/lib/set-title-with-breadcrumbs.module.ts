@@ -6,10 +6,10 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule,
+    
     CommonModule,
     SetTitleWithBreadcrumbsComponent 
   ],
-  exports: [SetTitleWithBreadcrumbsComponent, RouterModule]
+  exports: [SetTitleWithBreadcrumbsComponent]
 })
 export class SetTitleWithBreadcrumbsModule { }

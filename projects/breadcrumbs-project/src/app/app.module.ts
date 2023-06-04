@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {SetTitleWithBreadcrumbsModule} from 'set-title-with-breadcrumbs';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { RecordsComponent } from './records/records.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    RecordsComponent
   ],
   imports: [
     BrowserModule,
